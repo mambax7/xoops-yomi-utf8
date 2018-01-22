@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="<?php echo $EST['html_path_url']?>style.css" type="text/css">
+
+<a name=top></a>
+<!-- メニューバー -->
+<div align=right><font id=small>
+<?php
+menu_bar();
+?>
+</font></div>
+<hr>
+<table width="100%"><tr><td id="title-bar">
+<b>登録データ修正完了</b>
+</td></tr></table>
+<ol>
+	▼登録データ修正が以下のとおり完了しましたのでご確認ください<br><br>
+<!--ID-->
+	<li>【ID】<br>
+		<ul><?php echo $Slog[0]?></ul><br>
+<!--お名前-->
+	<li>【お名前】<br>
+		<ul><?php echo $Slog[8]?></ul><br>
+<!--メールアドレス-->
+	<li>【メールアドレス】<br>
+		<ul><?php echo $Slog[9]?></ul><br>
+<!--マーク-->
+	<li>【マーク】<br>
+		<ul><?php echo $PR_mark?></ul><br>
+<!--ホームページアドレス-->
+	<li>【ホームページアドレス】<br>
+		<ul><a href="<?php echo $Slog[2]?>"><?php echo $Slog[2]?></a>　[<a href="<?php echo $Slog[2]?>" target="_blank">確認</a>]
+		</ul><br>
+<?php
+if($EST_reg['bana_url']){
+?>
+<!--タイトルバナーのURL-->
+	<li>【タイトルバナーのURL】
+		<ul><a href="<?php echo $Slog[12]?>"><?php echo $Slog[12]?></a>　[<a href="<?php echo $Slog[12]?>" target="_blank">確認</a>]
+		</ul><br>
+<?php
+}
+?>
+<!--ホームページのタイトル-->
+	<li>【ホームページのタイトル】
+		<ul><?php echo $Slog[1]?></ul><br>
+<!--ホームページの紹介文-->
+	<li>【ホームページの紹介文】
+		<ul>
+		<table width="100%" border=0><tr><td><?php echo $Slog[6]?></td></tr></table>
+		</ul><br>
+<!--登録するカテゴリ-->
+	<li>【登録するカテゴリ】<?php echo $PR_kt?>
+		<ul>
+<?php
+PR_preview_kt2();
+?>
+</ul><br>
+<!--キーワード-->
+	<li>【キーワード】
+		<ul><?php echo $Slog[15]?></ul><br>
+<!--ここまで-->
+	<br><br>
+		【　<?php echo YOMI_HOME_URL?>に戻る　】
+</ol></form>
+<hr>
+<?php
+include("footer.php");
+?>
+
+<?php
+exit;
